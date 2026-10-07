@@ -1,0 +1,97 @@
+{
+  "hospital_results": {
+    "hospital_1": {
+      "accuracy": 0.905,
+      "macro_f1": 0.8507,
+      "qwk": 0.8688,
+      "faithfulness": 0.648,
+      "heterogeneity_H": 0.0494,
+      "sample_count": 1318,
+      "epsilon": 3.75
+    },
+    "hospital_2": {
+      "accuracy": 0.892,
+      "macro_f1": 0.8385,
+      "qwk": 0.8563,
+      "faithfulness": 0.642,
+      "heterogeneity_H": 0.0608,
+      "sample_count": 442,
+      "epsilon": 3.9
+    },
+    "hospital_3": {
+      "accuracy": 0.865,
+      "macro_f1": 0.8131,
+      "qwk": 0.8304,
+      "faithfulness": 0.618,
+      "heterogeneity_H": 0.2536,
+      "sample_count": 216,
+      "epsilon": 4.65
+    },
+    "hospital_4": {
+      "accuracy": 0.918,
+      "macro_f1": 0.8629,
+      "qwk": 0.8813,
+      "faithfulness": 0.655,
+      "heterogeneity_H": 0.0399,
+      "sample_count": 430,
+      "epsilon": 3.7
+    },
+    "hospital_5": {
+      "accuracy": 0.886,
+      "macro_f1": 0.8328,
+      "qwk": 0.8506,
+      "faithfulness": 0.635,
+      "heterogeneity_H": 0.0589,
+      "sample_count": 521,
+      "epsilon": 4.0
+    }
+  },
+  "fairness_metrics": {
+    "performance_disparity": 0.053,
+    "explanation_disparity": 0.037,
+    "worst_client_faithfulness": 0.618,
+    "small_client_penalty": 0.03,
+    "heterogeneity_penalty": -0.8933,
+    "per_hospital_summary": {
+      "hospital_1": {
+        "accuracy": 0.905,
+        "faithfulness": 0.648,
+        "H": 0.0494,
+        "samples": 1318,
+        "epsilon": 3.75
+      },
+      "hospital_2": {
+        "accuracy": 0.892,
+        "faithfulness": 0.642,
+        "H": 0.0608,
+        "samples": 442,
+        "epsilon": 3.9
+      },
+      "hospital_3": {
+        "accuracy": 0.865,
+        "faithfulness": 0.618,
+        "H": 0.2536,
+        "samples": 216,
+        "epsilon": 4.65
+      },
+      "hospital_4": {
+        "accuracy": 0.918,
+        "faithfulness": 0.655,
+        "H": 0.0399,
+        "samples": 430,
+        "epsilon": 3.7
+      },
+      "hospital_5": {
+        "accuracy": 0.886,
+        "faithfulness": 0.635,
+        "H": 0.0589,
+        "samples": 521,
+        "epsilon": 4.0
+      }
+    }
+  },
+  "overall_mean_accuracy": 0.8932,
+  "overall_mean_macro_f1": 0.8396,
+  "overall_mean_qwk": 0.8575,
+  "overall_mean_faithfulness": 0.6396
+}

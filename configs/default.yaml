@@ -1,0 +1,53 @@
+# FaithFed-XAI Default Configuration
+
+data:
+  csv_path: "data/aptos/train.csv"
+  img_dir: "data/aptos/train_images"
+  img_size: 128
+  ben_graham_sigma: 10
+  num_classes: 5
+  num_hospitals: 5
+  dirichlet_alpha: 0.5
+  train_ratio: 0.8
+  seed: 42
+
+model:
+  name: "RetinalNet"
+  in_channels: 3
+  num_classes: 5
+  num_groups: 8
+  dropout: 0.25
+
+federated:
+  num_rounds: 5
+  local_epochs: 2
+  batch_size: 16
+  lr: 0.0005
+  weight_decay: 0.0001
+  algorithm: "FaithFed-XAI"  # FaithFed-XAI, FedAvg, FedBN, FedAvg-FixedDP, Centralized
+
+differential_privacy:
+  enabled: true
+  target_epsilon: 4.0
+  target_delta: 0.00001
+  max_grad_norm: 1.0
+  noise_multiplier: 0.83
+  engine: "opacus"
+  adaptive: true
+  weights:
+    w_h: 0.35  # Data heterogeneity weight
+    w_a: 0.35  # Accuracy degradation weight
+    w_e: 0.30  # Explanation drift weight
+
+secure_aggregation:
+  enabled: true
+  mask_scale: 1.0
+
+xai:
+  target_layer: "layer4"
+  num_ref_samples: 5
+  faithfulness_steps: 10
+
+output:
+  artifacts_dir: "artifacts"
+  results_dir: "results"

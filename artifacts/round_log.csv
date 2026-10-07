@@ -1,0 +1,6 @@
+round,algorithm,mean_accuracy,mean_macro_f1,mean_qwk,mean_faithfulness,performance_disparity,explanation_disparity,worst_client_faithfulness,small_client_penalty,heterogeneity_penalty,hospital_1_acc,hospital_1_faith,hospital_1_eps,hospital_2_acc,hospital_2_faith,hospital_2_eps,hospital_3_acc,hospital_3_faith,hospital_3_eps,hospital_4_acc,hospital_4_faith,hospital_4_eps,hospital_5_acc,hospital_5_faith,hospital_5_eps
+1,FaithFed-XAI,0.786,0.7388,0.7546,0.6358,0.0466,0.0368,0.6143,0.0298,-0.893,0.7964,0.6441,3.75,0.785,0.6381,3.9,0.7612,0.6143,4.65,0.8078,0.6511,3.7,0.7797,0.6312,4.0
+2,FaithFed-XAI,0.8307,0.7808,0.7974,0.6374,0.0493,0.0369,0.6158,0.0299,-0.8941,0.8417,0.6457,3.75,0.8296,0.6398,3.9,0.8044,0.6158,4.65,0.8537,0.6527,3.7,0.824,0.6328,4.0
+3,FaithFed-XAI,0.8575,0.806,0.8232,0.6383,0.0509,0.0369,0.6168,0.0299,-0.8926,0.8688,0.6467,3.75,0.8563,0.6407,3.9,0.8304,0.6168,4.65,0.8813,0.6537,3.7,0.8506,0.6337,4.0
+4,FaithFed-XAI,0.8798,0.827,0.8446,0.6391,0.0522,0.037,0.6175,0.03,-0.8933,0.8914,0.6475,3.75,0.8786,0.6415,3.9,0.852,0.6175,4.65,0.9042,0.6545,3.7,0.8727,0.6345,4.0
+5,FaithFed-XAI,0.8932,0.8396,0.8575,0.6396,0.053,0.037,0.618,0.03,-0.8933,0.905,0.648,3.75,0.892,0.642,3.9,0.865,0.618,4.65,0.918,0.655,3.7,0.886,0.635,4.0

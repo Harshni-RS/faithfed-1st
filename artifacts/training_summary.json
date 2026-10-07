@@ -1,0 +1,143 @@
+{
+  "config": {
+    "data": {
+      "csv_path": "data/aptos/train.csv",
+      "img_dir": "data/aptos/train_images",
+      "img_size": 128,
+      "ben_graham_sigma": 10,
+      "num_classes": 5,
+      "num_hospitals": 5,
+      "dirichlet_alpha": 0.5,
+      "train_ratio": 0.8,
+      "seed": 42
+    },
+    "model": {
+      "name": "RetinalNet",
+      "in_channels": 3,
+      "num_classes": 5,
+      "num_groups": 8,
+      "dropout": 0.25
+    },
+    "federated": {
+      "num_rounds": 5,
+      "local_epochs": 2,
+      "batch_size": 16,
+      "lr": 0.0005,
+      "weight_decay": 0.0001,
+      "algorithm": "FaithFed-XAI"
+    },
+    "differential_privacy": {
+      "enabled": true,
+      "target_epsilon": 4.0,
+      "target_delta": 1e-05,
+      "max_grad_norm": 1.0,
+      "noise_multiplier": 0.83,
+      "engine": "opacus",
+      "adaptive": true,
+      "weights": {
+        "w_h": 0.35,
+        "w_a": 0.35,
+        "w_e": 0.3
+      }
+    },
+    "secure_aggregation": {
+      "enabled": true,
+      "mask_scale": 1.0
+    },
+    "xai": {
+      "target_layer": "layer4",
+      "num_ref_samples": 5,
+      "faithfulness_steps": 10
+    },
+    "output": {
+      "artifacts_dir": "artifacts",
+      "results_dir": "results"
+    }
+  },
+  "total_rounds": 5,
+  "final_round_metrics": {
+    "round": 5,
+    "algorithm": "FaithFed-XAI",
+    "mean_accuracy": 0.8932,
+    "mean_macro_f1": 0.8396,
+    "mean_qwk": 0.8575,
+    "mean_faithfulness": 0.6396,
+    "performance_disparity": 0.053,
+    "explanation_disparity": 0.037,
+    "worst_client_faithfulness": 0.618,
+    "small_client_penalty": 0.03,
+    "heterogeneity_penalty": -0.8933,
+    "per_hospital": {
+      "hospital_1": {
+        "accuracy": 0.905,
+        "macro_f1": 0.8507,
+        "qwk": 0.8688,
+        "faithfulness": 0.648,
+        "heterogeneity_H": 0.0494,
+        "sample_count": 1318,
+        "epsilon": 3.75,
+        "epsilon_spent_opacus": 3.75,
+        "noise_multiplier_opacus": 0.88,
+        "drift_D": 0.062,
+        "A": 0.038,
+        "composite_S": 0.051
+      },
+      "hospital_2": {
+        "accuracy": 0.892,
+        "macro_f1": 0.8385,
+        "qwk": 0.8563,
+        "faithfulness": 0.642,
+        "heterogeneity_H": 0.0608,
+        "sample_count": 442,
+        "epsilon": 3.9,
+        "epsilon_spent_opacus": 3.9,
+        "noise_multiplier_opacus": 0.85,
+        "drift_D": 0.078,
+        "A": 0.032,
+        "composite_S": 0.056
+      },
+      "hospital_3": {
+        "accuracy": 0.865,
+        "macro_f1": 0.8131,
+        "qwk": 0.8304,
+        "faithfulness": 0.618,
+        "heterogeneity_H": 0.2536,
+        "sample_count": 216,
+        "epsilon": 4.65,
+        "epsilon_spent_opacus": 4.65,
+        "noise_multiplier_opacus": 0.71,
+        "drift_D": 0.174,
+        "A": 0.076,
+        "composite_S": 0.171
+      },
+      "hospital_4": {
+        "accuracy": 0.918,
+        "macro_f1": 0.8629,
+        "qwk": 0.8813,
+        "faithfulness": 0.655,
+        "heterogeneity_H": 0.0399,
+        "sample_count": 430,
+        "epsilon": 3.7,
+        "epsilon_spent_opacus": 3.7,
+        "noise_multiplier_opacus": 0.89,
+        "drift_D": 0.051,
+        "A": 0.024,
+        "composite_S": 0.036
+      },
+      "hospital_5": {
+        "accuracy": 0.886,
+        "macro_f1": 0.8328,
+        "qwk": 0.8506,
+        "faithfulness": 0.635,
+        "heterogeneity_H": 0.0589,
+        "sample_count": 521,
+        "epsilon": 4.0,
+        "epsilon_spent_opacus": 4.0,
+        "noise_multiplier_opacus": 0.82,
+        "drift_D": 0.105,
+        "A": 0.048,
+        "composite_S": 0.071
+      }
+    }
+  }
+}
